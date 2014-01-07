@@ -2,19 +2,9 @@
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:context="http://www.springframework.org/schema/context" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd ">
 
 	<context:annotation-config />
-	<context:component-scan base-package="com.manish.spring.firstexample.controller" />
-	<bean id="measurementInterceptor" class="com.manish.spring.firstexample.interceptor.MeasurementInterceptor"></bean>
-	<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
-		<property name="order" value="1"/>
-		<property name="interceptors">
-			<list>
-				<ref bean="measurementInterceptor"/>
-			</list>
-		</property>
-	</bean>
-	<bean id="summaryReportInterceptor" class="com.manish.spring.firstexample.interceptor.SummaryReportInterceptor"/>
+	<context:component-scan base-package="com.manish.webservice.controller" />
 	<!-- Database configurations  -->
-	<bean
+	<!-- <bean
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="location" value="classpath:com/manish/spring/firstexample/data/database.properties" />
 	</bean>
@@ -58,7 +48,7 @@
 	<bean id="service" class="com.manish.spring.firstexample.service.impl.ImplBookService">
 		<property name="bookDao" ref="bookdao"/>
 	</bean>
-	
+	 -->
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix">
